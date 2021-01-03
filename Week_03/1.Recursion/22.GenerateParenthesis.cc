@@ -1,5 +1,17 @@
-/*
- * [22] 括号生成
+/* [22][Medium] Generate Parentheses 括号生成
+
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+Example 1:
+
+Input: n = 3
+Output: ["((()))","(()())","(())()","()(())","()()()"]
+Example 2:
+
+Input: n = 1
+Output: ["()"]
+
+
  */
 #include <gtest/gtest.h>
 using namespace std;
@@ -29,5 +41,14 @@ class Solution {
   }
 };
 
+Solution s_;
+TEST(CodeTest1, GenerateParenthesis) {
+  vector<string> res = {"((()))", "(()())", "(())()", "()(())", "()()()"};
+  EXPECT_EQ(res, s_.generateParenthesis(3));
+}
 
+int main(int argc, char** argv) {
+  testing::InitGoogleTest(&argc,argv);
+  return RUN_ALL_TESTS();
+}
 

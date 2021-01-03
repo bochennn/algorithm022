@@ -41,9 +41,7 @@ def recursion(level, param1, param2, ...):
 + [297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
 + [236. 二叉树的公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 + [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-+ [77. 组合](https://leetcode-cn.com/problems/combinations/)
-+ [46. 全排列](https://leetcode-cn.com/problems/permutations/)
-+ [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+
 
 # #
 ## **分治** ##
@@ -71,8 +69,9 @@ def  divide_conquer(problem, param1, param2):
 
   # revert the current level status
 ```
-
-
+### <label style="color:grey">例题</label> ###
++ [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/)
+  
 # #
 ## **回溯** ##
 回溯法采用试错的思想, 它尝试分步去解决一个问题. 在分步解决问题的过程中, 当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候, 它将取消上一步甚至是上几步的计算, 再通过其它的可能的分步解答再次尝试寻找问题的答案.
@@ -83,8 +82,26 @@ def  divide_conquer(problem, param1, param2):
 
 在最坏的情况下, 回溯法会导致一次复杂度为指数时间的计算
 
-### <label style="color:grey">例题</label> ###
-+ 八皇后问题
-+ 数独
+### <label style="color:grey">C++模版</label> ###
+```c++
+void backtracking(& result, & data, start, end, ...):
+  // recursion terminator
+  if (start == end) {
+    add_result(result, data);
+    return;
+  }
+  for (int i = start; i < end; i++) {
+    // process logic in current level 处理当前层逻辑
+    process(data);
+    backtracking(result, data, startIndex + 1, n, ...);
+    // remend 撤销当前层处理逻辑
+    unprocess(data);
+  }
+```
 
+### <label style="color:grey">例题</label> ###
++ [77. 组合](https://leetcode-cn.com/problems/combinations/)
++ [46. 全排列](https://leetcode-cn.com/problems/permutations/)
++ [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
++ [78. 子集](https://leetcode-cn.com/problems/subsets/)
 
