@@ -1,7 +1,7 @@
 # 学习笔记 #
 
 
-## 哈希表 HashMap ##
+### 哈希表 HashMap ###
 
 C++中使用`unordered_map`实现, `hash_map`约等于`unordered_map` [参考](https://www.jianshu.com/p/56bb01df8ac7/)
 
@@ -19,20 +19,20 @@ C++中使用`unordered_map`实现, `hash_map`约等于`unordered_map` [参考](h
 int hash(string s) {
   int ans = 0;
   for (char i: s) {
-    ans = ans + 5*i*i*i/26 + i*1009 - i*i*997; // 依据字符范围自定义
+    // 依据字符范围自定义
+    ans = ans + 5*i*i*i/26 + i*1009 - i*i*997;
   }
   return ans;
 }
 ```
 
-### <label style="color:grey">例题</label> ###
+#### <font style="color:grey">例题</font> ####
 + [242. 有效的字母异味词](https://leetcode-cn.com/problems/climbing-stairs/)
 + [49. 字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/)
 + [1. 两数之和](https://leetcode-cn.com/problems/two-sum/)
+---
 
-
-# #
-## 二叉搜索树 BinarySearchtree ##
+### 二叉搜索树 BinarySearchtree ###
 
 二叉树前序遍历的顺序为:
 1. 先遍历根节点
@@ -44,7 +44,7 @@ int hash(string s) {
 2. 随后遍历根节点
 3. 最后递归地遍历右子树。
 
-### <label style="color:grey">例题</label> ###
+#### <font style="color:grey">例题</font> ####
 二叉树
 + [144. 二叉树前序遍历]()
 + [94. 二叉树中序遍历]()
@@ -53,13 +53,12 @@ N叉数
 + [590. N叉树的后序遍历](https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/)
 + [589. N叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/description/)
 + [429. N叉数的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/)
+---
 
 
-# #
-## 堆 Heap ##
+### 堆 Heap ###
 
-
-### <label style="color:grey">例题</label> ###
+#### <font style="color:grey">例题</font> ####
 + [lcof 40. 最小的k个数](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)
 + [347. 前K个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/)
 + [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)
