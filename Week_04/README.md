@@ -100,7 +100,7 @@ void bfs(Node* root) {
 + [x] [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
 + [ ] [在每个树行中找最大值](https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/)
 + [x] [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
-+ [ ] [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/)
++ [x] [127. 单词接龙](https://leetcode-cn.com/problems/word-ladder/) <font style="color:red">双向BFS更高效</font>
 + [ ] [126. 单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii/description/)
 + [ ] [529. 扫雷游戏](https://leetcode-cn.com/problems/minesweeper/description/)
 
