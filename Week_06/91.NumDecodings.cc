@@ -35,7 +35,8 @@
 输出：1
 
 */
-
+#include <gtest/gtest.h>
+using namespace std;
 
 class Solution {
 public:
@@ -44,7 +45,7 @@ public:
     // 在遇到1或者2的时候考虑不同解码结果
     // 当下一位为1-6时可以分, [7,8,9,0]不可分 并且0不能单独算, 且需要去掉前一次按两位解码的情况
     // 定义can_split(i-1, i)判断是否可用两种解码方式
-    // 定义dp[i]为考虑到第i位时的解码方式总数
+    // 定义dp[i]为考虑到第i位时的解码方式总数？
     // if s[i] == 0 && s[i-1] == 1||2: 
     //   dp[i] = dp[i-2]
     // if s[i-1] == 1:
@@ -53,11 +54,6 @@ public:
     //   dp[i] = dp[i-1] + dp[i-2]
     // else:
     //   dp[i] = dp[i-1]
-
-    // unordered_map<char, int> decode_map;
-    // for (int i = 0; i < 26; i++) {
-    //     decode_map['A'+ i] = i + 1;
-    // }
 
     if (s.size() < 1 || s[0] == '0') {
       return 0;

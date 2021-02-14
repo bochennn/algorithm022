@@ -6,14 +6,6 @@ Given a linked list, swap every two adjacent nodes and return its head.
 Example 1:
 Input: head = [1,2,3,4]
 Output: [2,1,4,3]
-
-Example 2:
-Input: head = []
-Output: []
-
-Example 3:
-Input: head = [1]
-Output: [1]
 */
 
 
@@ -29,7 +21,7 @@ struct ListNode {
 class Solution {
 public:
   ListNode* swapPairs(ListNode* head) {
-    if (head == NULL || head->next == NULL) {
+    if (head == nullptr || head->next == nullptr) {
       return head;
     }
     ListNode* newHead = head->next;

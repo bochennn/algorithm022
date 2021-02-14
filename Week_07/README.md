@@ -151,6 +151,51 @@ void double_ended_bfs(Tp begin, Tp end, vector<Tp> list) {
 
 利用当前与问题有关的信息作为启发式信息，这些信息是能够提升查找效率以及减少查找次数
 
+```c++
+class Node {
+ public:
+  int x;
+  int y;
+  bool operator< (const Node &A) {
+    //
+  }
+};
+
+void generate_related_nodes(Node &node) {
+  //
+}
+
+void process(Node &node) {
+  //
+}
+
+void AstarSearch(vector<vector<int>>& graph, Node& start, Node& end) {
+  vector<vector<bool>> visited(graph.size(), vector<bool>(graph[0].size(), false));
+  priority_queue<Node> q;
+  q.push(start);
+  
+  while (!q.empty()) {
+    // 每次处理优先级最大的元素
+    Node cur = q.top();
+    q.pop();
+    visited[cur.x][cur.y] = true;
+    
+    process(node);
+    // 依据估价函数生成搜索节点
+    vector<Node> nodes = generate_related_nodes(node)
+    for (auto node : nodes) {
+      if (!visited[node.x][node.y])
+        q.push(node);
+    }
+  }
+  return;
+}
+```
+
+估价函数: h(n), 它用来评价哪些节点最有希望的是我们要找的节点, h(n)会返回一个非负实数, 也可以认为是从节点n的目标节点路径的估计成本.
+
+启发式函数是一种告知搜索方向的方法. 它提供了一种明智的方法来猜测哪个邻居节点会导向一个目标.
+
 #### 3.1 AVL树 ####
 
 
