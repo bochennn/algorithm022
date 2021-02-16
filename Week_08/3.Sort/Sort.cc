@@ -91,13 +91,13 @@ void mergeSort(vector<int>& array, int left, int right) {
 
 // 6.快排
 int randomPartition(vector<int>& array, int l, int r) {
-  int random_pivot = rand() % (r - l + 1) + l;  //随机选择pivot
+  int random_pivot = rand() % (r - l + 1) + l;  // 随机选择pivot
   int pivot = array[random_pivot];
   swap(array[random_pivot], array[r]);
   int i = l - 1;
   for (int j = l; j < r; j++) {
     if (array[j] < pivot) {
-      swap(array[++i], array[j]);
+      swap(array[++i], array[j]); // 每找到一个比pivot小的数时,i指针右移
     }
   }
   int pivot_index = i + 1;
@@ -105,11 +105,12 @@ int randomPartition(vector<int>& array, int l, int r) {
   return pivot_index;
 }
 void randomQuickSort(vector<int>& array, int l, int r) {
-  if (l < r) {
-    int pivot_index = randomPartition(array, l, r);
-    randomQuickSort(array, l, pivot_index - 1);
-    randomQuickSort(array, pivot_index + 1, r);
+  if (l >= r) {
+    return;
   }
+  int pivot_index = randomPartition(array, l, r);
+  randomQuickSort(array, l, pivot_index - 1);
+  randomQuickSort(array, pivot_index + 1, r);
 }
 
 //7. 堆排序

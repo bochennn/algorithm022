@@ -38,15 +38,15 @@ class Solution {
   TreeNode* build(vector<int>& preorder, vector<int>& inorder, 
                   int preorder_left, int preorder_right, 
                   int inorder_left,  int inorder_right) {
-    if (preorder_left > preorder_right) {
+    if (preorder_left > preorder_right || inorder_left > inorder_right) {
       return nullptr;
     }
 
-    int preorder_root = preorder_left;
+    int root_node = preorder[preorder_left];
     // 中序遍历中的根节点index在前序遍历的left
-    int inorder_root = index_[preorder[preorder_root]];
+    int inorder_root = index_[preorder[root_node]];
 
-    TreeNode* root = new TreeNode(preorder[preorder_root]);
+    TreeNode* root = new TreeNode(root_node);
     // 左子树中的节点数目 = 根节点index - 中序left
     int size_left_subtree = inorder_root - inorder_left;
     // 这样就能再分成一个sub problem
