@@ -58,8 +58,8 @@ public:
       ((root == p || root == q) && (lson || rson))) {
       res_ = root;
     }
-      // 当有任意一个判断为true时，认为该节点包含p或q
-      return (root == p || root == q) || lson || rson;
+    // 当有任意一个判断为true时，认为该节点包含p或q
+    return (root == p || root == q) || lson || rson;
   }
 
   TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {

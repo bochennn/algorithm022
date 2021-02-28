@@ -13,7 +13,9 @@
 
 + **股票买卖**: `dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i]); dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])` [参考](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/solution/javayi-ge-si-lu-da-bao-suo-you-gu-piao-t-pd1p/)
 
-+ **过河问题**: 
++ **跳跃游戏**: 
+
++ **青蛙过河**: `dp[i][k] = dp[j][k-1] || dp[j][k] || dp[j][k+1]`
 
 + **回文子串**: `dp[i][j] = (s[i] == s[j] && s[i+1][j-1]) ? s[i+1][j-1] + 2 : 0`
 

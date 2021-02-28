@@ -38,11 +38,11 @@ class Solution {
       return;
     }
     TreeNode* tmp = root->left;
-      invert(root->left);
-      invert(root->right);
-      root->left = root->right;
-      root->right = tmp;
-    }
+    invert(root->left);
+    invert(root->right);
+    root->left = root->right;
+    root->right = tmp;
+  }
 
   TreeNode* invertTree(TreeNode* root) {
     invert(root);
